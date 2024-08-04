@@ -6,8 +6,8 @@ export  const expenseSlice = createSlice({
 ExpenseList:[{name:"apple",price:100},{name:"banana",price:100}],
     },
     reducers:{
-        addExpenseAction:(currentSlice) => {console.log("This is strange")
-        currentSlice.ExpenseList.push({"laptop":5000})}
+        addExpenseAction:(currentSlice,action) => {console.log(action)
+        currentSlice.ExpenseList.push(action.payload);}
     }
 })
 
