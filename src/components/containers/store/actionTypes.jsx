@@ -1,0 +1,1 @@
+export const GET_ACTION_VALUE = "THE VALUE IS HERE";
