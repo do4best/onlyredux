@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
-import {useDispatch} from "react-redux";
+import {useDispatch,useSelector} from "react-redux";
 import Actions from "./store/actions.jsx";
 function AddNotes(props) {
     const [addNote,setaddNote] = useState("")
     const dispatch = useDispatch()
+    const {success} = useSelector(state=>state.addNoteReducers)
+    console.log(success)
     const handelChange=(e)=>{
         const {value} = e.target;
         setaddNote(value)

@@ -1,1 +1,4 @@
 export const GET_ACTION_VALUE = "THE VALUE IS HERE";
+export const GET_ACTION_SUCCESS = "THE SUCCESS";
+
+export const GET_ACTION_FAIL = "THE FAIL";

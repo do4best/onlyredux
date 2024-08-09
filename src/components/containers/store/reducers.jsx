@@ -1,15 +1,22 @@
-import {GET_ACTION_VALUE} from "./actionTypes.jsx";
+import {GET_ACTION_FAIL, GET_ACTION_SUCCESS} from "./actionTypes.jsx";
 
 
 const initialState={
-    flag:false
+    success:false,
+    fail:false
 }
 const addNoteReducers=(state=initialState,action)=>{
     switch(action.type){
-        case GET_ACTION_VALUE:
+        case GET_ACTION_SUCCESS:
             return{
                 ...state,
-                flag: true
+                success: action.success
+            }
+
+        case GET_ACTION_FAIL:
+            return{
+                ...state,
+                fail: action.fail
             }
         default:
             return state;
