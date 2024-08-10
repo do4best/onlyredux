@@ -3,9 +3,10 @@ import React from 'react';
  export function Footer(props) {
     return (
         <>
-            <div className="container">
-                <div className="row">
-                    <div className="col-6 col-sm-6">
+            <div className="container" >
+                <div className="row" >
+                    <hr/>
+                    <div className="col-6 col-sm-6" >
                         All Right Reserved
                     </div>
                     <div className="col-6 col-cm-6">
@@ -16,6 +17,7 @@ import React from 'react';
                             <li className={"list-group-item"}>Contact</li>
                         </ul>
                     </div>
+                    <hr/>
                 </div>
             </div>
         </>
