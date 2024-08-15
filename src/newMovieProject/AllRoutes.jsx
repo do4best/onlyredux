@@ -1,17 +1,16 @@
 import {Routes,Route} from "react-router-dom";
 import {MovieList,MovieDetails,Search,NotFound} from "./pages/index.js";
-import React from 'react';
-import * as domain from "node:domain";
 
-function AllRoutes(props) {
+
+function AllRoutes() {
     return (
         <main className={"dark:bg-slate-800"}>
         <Routes>
-            <Route path={""} element={<MovieList/>}/>
-            <Route path={"movie/:id"} element={<MovieList/>}/>
-            <Route path={"movies/popular"} element={<MovieList/>}/>
-            <Route path={"movies/top"} element={<MovieList/>}/>
-            <Route path={"movies/upcoming"} element={<MovieList/>}/>
+            <Route path={""} element={<MovieList apiPath={"movie/now_playing?"}/>}/>
+            <Route path={"movie/:id"} element={<MovieDetails/>}/>
+            <Route path={"movies/popular"} element={<MovieList apiPath={"movie/popular?"}/>}/>
+            <Route path={"movies/top"} element={<MovieList apiPath={"movie/top_rated?"}/>}/>
+            <Route path={"movies/upcoming"} element={<MovieList apiPath={"movie/upcoming?"}/>}/>
             <Route path={"search"} element={<Search/>}/>
             <Route path={"*"} element={<NotFound/>}/>
         </Routes>

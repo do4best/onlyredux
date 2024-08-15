@@ -5,8 +5,8 @@ import {api_key,now_playing,popular_movies,top_trending} from "./config.js";
 import {Fake_popular} from "./Fake_popular.js";
 
 export  class MovieShow{
-    static async fetchNowPlaying(){
-       const response=await axios.get(`${now_playing}movie/now_playing?${api_key}`)
+    static async fetchNowPlaying(apiPath){
+       const response=await axios.get(`${now_playing}${apiPath}${api_key}`)
 return response.data.results;
 
 // return Fake_popular
@@ -14,7 +14,7 @@ return response.data.results;
 
     }
     static async fetchPopularPlaying(){
-        const response=await axios.get(`${popular_movies}movie/popular?${api_key}`)
+        const response=await axios.get(`${popular_movies}movie/upcoming?${api_key}`)
         return response.data.results;
 
 // return Fake_popular
@@ -22,6 +22,14 @@ return response.data.results;
 
     }
     static async fetchTopTrendingPlaying(){
+        const response=await axios.get(`${top_trending}movie/top_rated?${api_key}`)
+        return response.data.results;
+
+// return Fake_popular
+
+
+    }
+    static async fetchupComingPlaying(){
         const response=await axios.get(`${top_trending}movie/top_rated?${api_key}`)
         return response.data.results;
 

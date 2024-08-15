@@ -1,25 +1,28 @@
 import {useEffect, useState} from 'react';
-import {MovieShow} from "../apiHandeling/movieApi.js";
+
 import PropTypes from "prop-types";
-function Thefetchuse() {
+import axios from "axios";
+import {api_key, now_playing} from "../apiHandeling/config.js";
+function Thefetchuse({apiPath}) {
     const [data,setData] = useState([])
 
-    async  function FetchMovies(){
+const url =`${now_playing}${apiPath}${api_key}`
 
-        const response =await MovieShow.fetchNowPlaying()
+    useEffect(() => {
 
-        setData(response)
+        async  function FetchMovies(){
 
+
+                const response=await axios.get(url)
+
+
+
+                setData(response.data.results)
 
 
 
     }
-
-    useEffect(() => {
-
-        FetchMovies()
-
-    }, []);
+        FetchMovies()}, [url]);
     return {data};
 }
 
