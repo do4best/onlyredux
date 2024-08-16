@@ -14,7 +14,7 @@ const imagesFind = `https://image.tmdb.org/t/p/w500/${poster_path}`;
             </Link>
             <div className="p-5">
                 <Link to={`/movie/${id}`}>
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{original_title}</h5>
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-500">{original_title}</h5>
                 </Link>
                 <p className="mb-auto font-normal text-gray-700 dark:text-gray-400">{overview}</p>
 

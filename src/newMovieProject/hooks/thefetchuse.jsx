@@ -3,10 +3,10 @@ import {useEffect, useState} from 'react';
 import PropTypes from "prop-types";
 import axios from "axios";
 import {api_key, now_playing} from "../apiHandeling/config.js";
-function Thefetchuse({apiPath}) {
+function Thefetchuse({apiPath},queryTerm="") {
     const [data,setData] = useState([])
 
-const url =`${now_playing}${apiPath}${api_key}`
+const url =`${now_playing}${apiPath}${api_key}&query=${queryTerm}`
 
     useEffect(() => {
 
