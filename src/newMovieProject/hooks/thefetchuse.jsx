@@ -13,11 +13,14 @@ const url =`${now_playing}${apiPath}${api_key}&query=${queryTerm}`
         async  function FetchMovies(){
 
 
-                const response=await axios.get(url)
-
-
-
-                setData(response.data.results)
+                // const response=await axios.get(url)
+                //
+                //
+                //
+                // setData(response.data.results)
+            const response = await fetch(url)
+            const data = await response.json()
+            setData(data.results)
 
 
 

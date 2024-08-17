@@ -3,9 +3,15 @@ import {Cards} from "./Cards.jsx";
 
 import thefetchuse from "../hooks/thefetchuse.jsx";
 import PropTypes from "prop-types";
-export function MovieList(apiPath) {
-const{data:showMovies} = thefetchuse(apiPath)
+import {useEffect} from "react";
 
+export function MovieList({apiPath,title}) {
+
+const{data:showMovies} = thefetchuse({apiPath})
+
+    useEffect(() => {
+        document.title = `${title} Ravi Movies`
+    } );
 
 
     return (<main>
@@ -28,5 +34,6 @@ const{data:showMovies} = thefetchuse(apiPath)
 
 }
 MovieList.propTypes={
-    apiPath:PropTypes.any
+    apiPath:PropTypes.any,
+    title:PropTypes.any
 }
