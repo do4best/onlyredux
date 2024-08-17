@@ -1,11 +1,12 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import axios from "axios";
+
 import backup from '../assets/images/backup.png'
 
 export function MovieDetails() {
     const params = useParams()
     const [movieData,setMovieData] = useState({})
+    const back_drop_url = "https://image.tmdb.org/t/p/original";
 
     useEffect(() => {
         async function fetchMovie(){
@@ -22,7 +23,7 @@ export function MovieDetails() {
     console.log(image)
     return (
         <main>
-            <section className={"flex justify-around flex-wrap py-5"}>
+            <section className={"flex justify-around flex-wrap py-5"} style={{ height:"100vh",width:"100vw",background:movieData?`linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url("${back_drop_url}${movieData.backdrop_path}") no-repeat center / cover`:"black"}}>
                 <div className={"max-w-sm"}>
                     <img className={"rounded"} src={image} alt={movieData.title}/>
                 </div>
