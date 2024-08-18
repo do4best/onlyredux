@@ -1,9 +1,9 @@
 import React from 'react';
 
-function TwitterCatagories(props) {
+function TwitterResults(props) {
     return (
         <div></div>
     );
 }
 
-export default TwitterCatagories;
+export default TwitterResults;
